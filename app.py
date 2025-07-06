@@ -36,5 +36,8 @@ def chatgpt_voice():
 
     return Response(twiml, mimetype="text/xml")
 
+if request.method == "GET":
+     "Voice assistant is running!"
+
 if __name__ == "__main__":
     app.run(port=5000)
