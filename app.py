@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Replace with your ChatGPT API key
 openai.api_key = "sk-proj-..."  # Keep it safe!
 
-@app.route("/chatgpt-voice", methods=["POST"])  # Only path here
+@app.route("/chatgpt-voice", methods=["GET", "POST"])  # Only path here
 def chatgpt_voice():
     user_input = request.form.get("SpeechResult", "")
     print("User said:", user_input)
