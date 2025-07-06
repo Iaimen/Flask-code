@@ -1,15 +1,19 @@
 from flask import Flask, request, Response
 import openai
+import os
+from dotenv import load_dotenv 
+load_dotenv()
 
 app = Flask(__name__)
 
 # Replace with your ChatGPT API key
-openai.api_key = "sk-proj-..."  # Keep it safe!
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route("/chatgpt-voice", methods=["GET", "POST"])  # Only path here
 def chatgpt_voice():
     if request.method == "GET":
         return "✅ Flask app is live and reachable!"
+    
     user_input = request.form.get("SpeechResult", "")
     print("User said:", user_input)
 
