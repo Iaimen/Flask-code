@@ -8,6 +8,8 @@ openai.api_key = "sk-proj-..."  # Keep it safe!
 
 @app.route("/chatgpt-voice", methods=["GET", "POST"])  # Only path here
 def chatgpt_voice():
+    if request.method == "GET":
+        return "✅ Flask app is live and reachable!"
     user_input = request.form.get("SpeechResult", "")
     print("User said:", user_input)
 
@@ -35,9 +37,6 @@ def chatgpt_voice():
 </Response>"""
 
     return Response(twiml, mimetype="text/xml")
-
-if request.method == "GET":
-     "Voice assistant is running!"
 
 if __name__ == "__main__":
     app.run(port=5000)
