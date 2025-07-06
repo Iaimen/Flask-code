@@ -37,6 +37,3 @@ def chatgpt_voice():
 </Response>"""
 
     return Response(twiml, mimetype="text/xml")
-
-if __name__ == "__main__":
-    app.run(port=5000)
