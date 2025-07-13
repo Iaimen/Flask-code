@@ -8,7 +8,7 @@ OPENAI_API_KEY="sk-proj-..."
 @app.route("/chatgpt-voice", methods=["GET", "POST"])  # Only path here
 def chatgpt_voice():
     if request.method == "GET":
-        return "✅ Flask app is live and reachable!"
+        return "✅ Python code is live and reachable!"
     
     user_input = request.form.get("SpeechResult", "")
     print("User said:", user_input)
